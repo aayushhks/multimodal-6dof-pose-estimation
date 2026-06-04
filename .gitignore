@@ -1,3 +1,48 @@
-*.DS_Store
+cat > .gitignore <<'EOF'
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# macOS / editor
+.DS_Store
 .idea/
-*/.idea/
+.vscode/
+
+# Logs and caches
+logs/
+wandb/
+.cache/
+*.log
+
+# Model checkpoints and large weights
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+
+checkpoints/*
+!checkpoints/.gitkeep
+
+# Large datasets
+all_data/
+data/
+raw_data/
+msi_datasets/**/images/
+msi_datasets/**/raw/
+msi_datasets/**/videos/
+
+# Results: keep CSVs and figures, ignore temporary outputs
+results/tmp/
+results/cache/
+EOF
